@@ -74,7 +74,7 @@ Play silence, not ringback or a prompt, while the script runs. Anything played t
 | Variable | Default | Meaning |
 |---|---|---|
 | `AMD_WS_API_KEY` | (required) | Your API key |
-| `AMD_WS_URL` | `ws://app.vmhunter.com:2701` | Server |
+| `AMD_WS_URL` | `wss://app.vmhunter.com/ws` | Server |
 | `AMD_AUDIO_SECONDS` | `3.5` | Most audio ever streamed. The server normally answers at about 2.3 s and may listen to 3 s while the callee is still talking. |
 | `AMD_CALLGUARD_STATUS` | `HUMAN` | What `AMDSTATUS` to set for call screening: `HUMAN` connects an agent, `MACHINE` drops, `CALLGUARD` passes the raw value through |
 | `AMD_FAILED_STATUS` | `MACHINE` | Fail-safe when the server cannot be reached or returns `FAILED` |

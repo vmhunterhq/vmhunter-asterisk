@@ -22,7 +22,7 @@ Install:
   pip install websocket-client
 
 ENV:
-  export AMD_WS_URL="ws://app.vmhunter.com:2701"
+  export AMD_WS_URL="wss://app.vmhunter.com/ws"
   export AMD_WS_API_KEY="{YOUR_API_KEY}"
   export AMD_AUDIO_SECONDS="3.5"   # MAXIMUM streamed; the server normally answers at ~2.3 s
                                    # and may listen up to 3 s while the callee is still talking
@@ -58,7 +58,7 @@ import select
 import logging
 from websocket import create_connection
 
-AMD_WS_URL = os.getenv("AMD_WS_URL", "ws://app.vmhunter.com:2701").strip()
+AMD_WS_URL = os.getenv("AMD_WS_URL", "wss://app.vmhunter.com/ws").strip()  # TLS; ws://app.vmhunter.com:2701 is the unencrypted fallback
 AMD_WS_API_KEY = os.getenv("AMD_WS_API_KEY", "").strip()
 AUDIO_SECONDS = float(os.getenv("AMD_AUDIO_SECONDS", "3.5"))   # upper bound, see below
 SAMPLE_RATE = int(os.getenv("AMD_SAMPLE_RATE", "8000"))
